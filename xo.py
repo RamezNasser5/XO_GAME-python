@@ -1,11 +1,34 @@
+def drawShape(linesDraw):
+    for lines in linesDraw:
+        print(lines)
+
+def checkPiece():
+    if indexSquare == '1':
+        linesDraw[1] = linesDraw[1][:2]+playerInput[2]+linesDraw[1][3:]
+    elif indexSquare == '2':
+        linesDraw[1] = linesDraw[1][:6]+playerInput[2]+linesDraw[1][7:]
+    elif indexSquare == '3':
+        linesDraw[1] = linesDraw[1][:10]+playerInput[2]+linesDraw[1][11:]
+    elif indexSquare == '4':
+        linesDraw[3] = linesDraw[3][:2]+playerInput[2]+linesDraw[3][3:]
+    elif indexSquare == '5':
+        linesDraw[3] = linesDraw[3][:6]+playerInput[2]+linesDraw[3][7:]
+    elif indexSquare == '6':
+        linesDraw[3] = linesDraw[3][:10]+playerInput[2]+linesDraw[3][11:]
+    elif indexSquare == '7':
+        linesDraw[5] = linesDraw[5][:2]+playerInput[2]+linesDraw[5][3:]
+    elif indexSquare == '8':
+        linesDraw[5] = linesDraw[5][:6]+playerInput[2]+linesDraw[5][7:]
+    elif indexSquare == '9':
+        linesDraw[5] = linesDraw[5][:10]+playerInput[2]+linesDraw[5][11:]
+    return linesDraw                                    
+
 checkTurn = True
 playerInput = ""
 firstPlayer = input("entre first player name ")
 secondPlayer = input("entre first player name ")
 linesDraw = [' --- --- --- ','| 1 | 2 | 3 |',' --- --- --- ',
              '| 4 | 5 | 6 |',' --- --- --- ','| 7 | 8 | 9 |',' --- --- --- ']
-for lines in linesDraw:
-    print(lines)
 while playerInput != "exit":
     if checkTurn == True:
         print(f"{firstPlayer}'s turn")
@@ -15,12 +38,6 @@ while playerInput != "exit":
         checkTurn = True
     playerInput = input("entre your piece ")
     indexSquare = playerInput[0]
-    if indexSquare == '1' or indexSquare == '2' or indexSquare == '3':
-        linesDraw[1].replace(indexSquare,playerInput[2])
-    elif indexSquare == '4' or indexSquare == '5' or indexSquare == '6':
-        linesDraw[3].replace(indexSquare,playerInput[2])
-    else:
-        linesDraw[5].replace(indexSquare,playerInput[2])
-    for lines in linesDraw:
-        print(lines)    
+    checkPiece()
+    drawShape(checkPiece())
 
