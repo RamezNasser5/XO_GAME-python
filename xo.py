@@ -3,24 +3,25 @@ def drawShape(linesDraw):
         print(lines)
 
 def checkPiece():
-    if indexSquare == '1':
-        linesDraw[1] = linesDraw[1][:2]+playerInput[2]+linesDraw[1][3:]
-    elif indexSquare == '2':
-        linesDraw[1] = linesDraw[1][:6]+playerInput[2]+linesDraw[1][7:]
-    elif indexSquare == '3':
-        linesDraw[1] = linesDraw[1][:10]+playerInput[2]+linesDraw[1][11:]
-    elif indexSquare == '4':
-        linesDraw[3] = linesDraw[3][:2]+playerInput[2]+linesDraw[3][3:]
-    elif indexSquare == '5':
-        linesDraw[3] = linesDraw[3][:6]+playerInput[2]+linesDraw[3][7:]
-    elif indexSquare == '6':
-        linesDraw[3] = linesDraw[3][:10]+playerInput[2]+linesDraw[3][11:]
-    elif indexSquare == '7':
-        linesDraw[5] = linesDraw[5][:2]+playerInput[2]+linesDraw[5][3:]
-    elif indexSquare == '8':
-        linesDraw[5] = linesDraw[5][:6]+playerInput[2]+linesDraw[5][7:]
-    elif indexSquare == '9':
-        linesDraw[5] = linesDraw[5][:10]+playerInput[2]+linesDraw[5][11:]
+    match indexSquare:
+        case '1':
+            linesDraw[1] = linesDraw[1][:2]+playerInput[2]+linesDraw[1][3:]
+        case '2':
+            linesDraw[1] = linesDraw[1][:6]+playerInput[2]+linesDraw[1][7:]
+        case '3':
+            linesDraw[1] = linesDraw[1][:10]+playerInput[2]+linesDraw[1][11:]
+        case '4':
+            linesDraw[3] = linesDraw[3][:2]+playerInput[2]+linesDraw[3][3:]
+        case '5':
+            linesDraw[3] = linesDraw[3][:6]+playerInput[2]+linesDraw[3][7:]
+        case '6':
+            linesDraw[3] = linesDraw[3][:10]+playerInput[2]+linesDraw[3][11:]
+        case '7':
+            linesDraw[5] = linesDraw[5][:2]+playerInput[2]+linesDraw[5][3:]
+        case '8':
+            linesDraw[5] = linesDraw[5][:6]+playerInput[2]+linesDraw[5][7:]
+        case '9':
+            linesDraw[5] = linesDraw[5][:10]+playerInput[2]+linesDraw[5][11:]
     return linesDraw                                    
 
 checkTurn = True
