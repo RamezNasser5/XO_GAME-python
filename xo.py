@@ -1,6 +1,9 @@
 def drawShape(linesDraw):
+    fileOpen = open('D:\programers\material\level 3\Artifituial intiligance\python projects\XO_GAME\XO_GAME-python\outputFile.txt','w')
     for lines in linesDraw:
         print(lines)
+        fileOpen.write(lines+'\n')
+    fileOpen.close()    
 
 def checkPiece():
     match indexSquare:
